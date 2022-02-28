@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Genos:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Genos', sans-serif;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    background-color: cadetblue;
+    background: linear-gradient(15deg, #ffe893 30%, #ffe68c 70%);
+    display: grid;
+    place-items: center;
+}
+.box{
+    height: 320px;
+    width: 320px;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 10px solid #fff;
+    box-shadow: 0 0 0.75vmin 0.75vmin rgba(17, 17, 17, 0.137);
+}
+.left{
+    height: 200px;
+    width: 100px;
+    background-color: #ffc800;
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    border-radius: 0 0 0 7px;
+}
+.left::after{
+    position: absolute;
+    content: "";
+    top: -10px;
+    left: 51%;
+    transform: translateX(-50%);
+    height: 17px;
+    border-radius: 2px;
+    background-color: #afafaf;
+    width: 110%;
+}
+.circle{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 48%;
+    transform: translateX(-50%);
+    background-color: #ff4b4b;
+    border: 7px solid #fff;
+}
+.door{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(7px);
+    height: 110px;
+    width: 65px;
+    background-color: #47d7ff;
+    background-image: linear-gradient(135deg, #47d7ff 25%, #61e3f7 25%, #61e3f7 50%, #47d7ff 50%, #47d7ff 75%, #47d7ff 75%, #47d7ff 100%);
+    border-radius: 10px 10px 0 0;
+    border: 7px solid #fff;
+}
+.door::after{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 35px;
+    background-color: #3a97b8;
+    border-radius: 7px;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.right{
+    height: 130px;
+    width: 200px;
+    background-color: #ffc800;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    border-radius: 0 0 7px 0;
+}
+.right::before{
+    content: "";
+    position: absolute;
+    height: 55px;
+    width: 15px;
+    background-color: #777777;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.right::after{
+    position: absolute;
+    content: "";
+    top: -10px;
+    left: 0;
+    height: 17px;
+    border-radius: 2px;
+    background-color: #afafaf;
+    width: 102%;
+}
+.shed{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 65px;
+    width: 175px;
+    background-image: linear-gradient(90deg, #ff4b4b 20%, #ffffff 20%, #ffffff 40%, #ff4b4b 40%, #ff4b4b 60%, #ffffff 60%, #ffffff 80%, #ff4b4b 80%);
+    border-radius: 0 0 7px 7px;
+}
+.shed::after{
+    content: "";
+    position: absolute;
+    background-color: #1113;
+    height: 45px;
+    width: 100%;
+    bottom: -25px;
+    border-radius: 0 0 7px 7px;
+}
+.window{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    transform: translateY(10px);
+    height: 65px;
+    width: 175px;
+    border-radius: 0 0 7px 7px;
+    background-image: linear-gradient(135deg, #47d7ff 25%, #61e3f7 25%, #61e3f7 50%, #47d7ff 50%, #47d7ff 75%, #61e3f7 75%, #61e3f7 100%);
+    border: 7px solid #fff;
+}
+.burger{
+    position: absolute;
+    height: 120px;
+    width: 150px;
+    background-color: #e5a259;
+    top: -165px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 35px 35px 15px 15px;
+}
+.middle{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 120%;
+    height: 40px;
+    background-color: #844c19;
+    border-radius: 15px;
+    transform: translate(-50%,-50%);
+}
+.middle::after{
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 92%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+    background-color: #78c800;
+    border-radius: 10px;
+}
+.red{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 25px;
+    border-radius: 0 0 50px 50px;
+    width: 30px;
+    background-color: #f34848;
+}
+.red::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    height: 37px;
+    border-radius: 0 0 50px 50px;
+    width: 30px;
+    background-color: #ffc800;
+} 
+.c{
+    position: absolute;
+    background-color: #fab872d2;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+}
+.c1{
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.c2{
+    top: 15px;
+    left: 30px;
+}
+.c3{
+    top: 15px;
+    right: 30px;
+}
+.loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #141f23;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: load 3s 2s linear both;
+    z-index: 5;
+}
+.loading h2{
+    background: linear-gradient(15deg, #afa788 30%, #b4aa86 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+.loading p{
+    background: linear-gradient(15deg, #e4d396 30%, #bbb49a 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* letter-spacing: 2px; */
+    margin-top: 10px;
+    padding: 15px;
+    text-align: center;
+    line-height: 1.5rem;
+}
+@keyframes load{
+    90%{
+    opacity: 0;
+    }
+    100%{
+    z-index: -100;
+    }
+}
+  </style>
+    <main>
+        <div class="box">
+            <div class="left">
+                <div class="door"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="right">
+                <div class="window"></div>
+                <div class="shed"></div>
+                <div class="overlay"></div>
+                <div class="burger">
+                    <div class="middle">
+                        <div class="red"></div>
+                    </div>
+                    <div class="c c1"></div>
+                    <div class="c c2"></div>
+                    <div class="c c3"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="loading">
+        <h2>LOADING...</h2>
+        <p>"Food is music to the body, music is food to the heart."</p>
+    </div>
+</body>
+</html>
